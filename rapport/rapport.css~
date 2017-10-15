@@ -1,0 +1,38 @@
+body {
+    background-color: #D1EBDF;
+    color:black;
+    text-align:left;
+    font-family:cursive;
+}
+footer {
+    text-align:center;
+}
+h1{
+    text-align:center;
+}
+.imgframe {
+    float: left;
+    position: relative;
+    height: 250px;
+    width: 250px;
+    background-color: #DEB887;
+    /*border: dashed 1px #BBDDBB;*/
+    border-radius: 5px;
+    margin: 1ex;
+    padding: 1ex;
+    text-align: center;
+}
+.imgframe:before {
+    content: "";
+    display: inline-block;
+    height: 80%;
+    vertical-align: middle;
+}
+
+.imgframe:hover {
+    background-color: #FFE4C4;
+}
+
+
+
+

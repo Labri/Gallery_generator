@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head><title>Rapport TPL : Stenzel et César</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="rapport.css" />
+</head><body>
+<h1>Notre rapport</h1>
+<div>
+  <h3>Présentation du projet</h3>
+  <p>Lors de ce projet nous avons coder un script qui génère une galerie d'image HTML en fonction d'images présentent dans un dossier "source".</p>
+  
+  <p>Pour plus d'information concernant ce projet, je vous propose de lire le sujet <a href="http://chamilo2.grenet.fr/inp/courses/ENSIMAG3MMUNIX/document/avance/tpl/tp-libre-service.pdf" target="_blank">ici</a>.</p>
+  
+</div>
+
+<div alias=amélioration><h3>Nos améliorations</h3>
+  <p>Une fois l'objectif principal remplii, nous avons décidé de rajouté quelques améliorations à notre script.<br>
+    <ul><li><u>"--open":</u>  cette fonction permet d'ouvrir directement la page html une fois géénrée. Si elle n'est pas rentrée, l'utilisateur doit le faire à la main comme indiqué sur le terminal.</li>
+      <li><u>"--title" :</u> cet argument, suivit d'un titre, va permettre à l'utilisateur de choisir le titre de la galerie.</li>
+      <li><u>"--para" :</u> cet argument, suivit d'un nombre positif ou nul, va permettre la création de n vignettes en même temps, n étant le nombre en argument rentré par l'utilisateur. Bien sur si ce nombre dépasse le nombre (m) de coeurs de la machine, alors il n'y aura pas n créations simultanée mais plutôt m. Si cet argument n'est pas rentré, il est par défaut à 4. Si celui ci vaut 1 alors génération séquentielle des vignettes.</li>
+      <li><u>Légendes :</u> pour chaque vignettes affichées, nous avons ajouté une légende composé de son nom ainsi que de sa date de prise de vue si celle si existe.</li>
+      <li><u>Tableau :</u> nous avons choisi d'afficher la galerie d'images sous forme d'un tableau de trois colonnes. Nous avons hésité à laisser l'utilisateur choisir cette largeur mais cela n'aurait rien apporté de plus, et aurait pu causer problème.</li>
+      <li><u>CSS :</u> afin que nos pages soit plus agréables à visionner, nous avons créer une page de styles CSS pour nos différentes pages.</li>
+      <li><u>Menu déroulant :</u> un menu déroulant a été ajouté aux pages dédiées aux pages des images en taille réelle. Cela permet à l'utilisateur de pouvoir naviguer facilement entre chaque image et de pouvoir revenir à la galerie si voulu. De plus le choix d'aller vers la page actuelle n'est pas disponible.</li>
+    </ul>
+</div>
+
+<div><h3>Nos tests</h3>
+  <p>Afin de s'assurer que notre script fonctionnait bien, même dans des cas tordus nous avons codé des scripts-test. Voici nos différents tests:<br>
+    <ul><li><u>generate_vignette.sh :</u> ce test va vérifier si le programme créé bien une vignette correspondant à chaque image du répertoire "source" dans le répertoire "destination". Pas d'argument, et le résultatdu tests'affiche dans le terminal.</li>
+      <li><u>image_page.sh :</u> ce test vérifie si notre script créé bien une page html en plus pour chaque image du répertoire source. Ces pages correspondent aux pages html avec l'image en taille réelle et non sa vignette. Pas d'argument, et le résultat du test s'affiche dans le terminal.</li>
+      <li><u>spaces.sh :</u> ce test vérifie si notre programme prend bien en compte les images du répertoire source dont le nom contient un espace. Pas d'argument, le résultat de la vignétarisation s'affiche dans le terminal et le resultat visuel s'affiche à l'écran sur la page web. Le programme n'affiche pas les images avec un nom comportant un espace.</li>
+      <li><u>args.sh :</u> ce test va vérifier si chaque argument à un impact sur le focntionnement du script. Il appel donc "galerie-shell.sh" plusieurs fois avec des arguments différents. Le résultat est donc affiché sur le terminal et est un peu long à analyser.</li>
+    </ul>
+  </p>
+</div>
+
+<footer><div>
+<a href="http://validator.w3.org/check?uri=referer"><img src="../dest/HTML5.png" alt="Valid Html"></a><br>Script développé par Stenzel Cackowski et César Dumas. </div></footer></body></html>
+
+
+
+
+
+
+
+
+

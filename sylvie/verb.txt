@@ -1,0 +1,1 @@
+On créé un fichier sylvie qui contiendra tous les fichiers utiles à la  création de la galerie.

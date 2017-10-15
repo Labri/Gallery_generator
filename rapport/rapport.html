@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head><title>Rapport TPL : Stenzel et César</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="rapport.css" />
+</head><body>
+<h1>Notre rapport</h1>
+<div>
+  <h3>Présentation du projet</h3>
+  <p>Lors de ce projet nous avons codé un script qui génère une galerie HTML d'images, en fonction d'images présentent dans un dossier "source".</p>
+  
+  <p>Pour plus d'informations concernant ce projet, je vous propose de lire le sujet <a href="http://chamilo2.grenet.fr/inp/courses/ENSIMAG3MMUNIX/document/avance/tpl/tp-libre-service.pdf" target="_blank">ici</a>.</p>
+  
+</div>
+
+<div alias=amélioration><h3>Nos améliorations</h3>
+  <p>Une fois l'objectif principal rempli, nous avons décidé de rajouter quelques améliorations à notre script.<br>
+    <ul><li><u>"--open" :</u> cette fonction permet d'ouvrir directement la page html une fois générée. Si elle n'est pas rentrée, l'utilisateur doit le faire à la main comme indiqué, en fin de script, sur le terminal.</li>
+      <br><li><u>"--title" :</u> cet argument, suivi d'un titre, va permettre à l'utilisateur de choisir le titre de la galerie.</li>
+      <br><li><u>"--para" :</u> cet argument, suivi d'un nombre positif ou nul, va permettre la création de n vignettes en même temps, n étant le nombre en argument rentré par l'utilisateur. Bien sur si ce nombre dépasse le nombre (m) de coeurs de la machine, alors il n'y aura pas n créations simultanées mais plutôt m. Si cet argument n'est pas rentré, il est par défaut à 4. Si celui ci vaut 1 alors il y a génération séquentielle des vignettes.<br>
+	Voici les différents temps d'execution avec et sans la création en paralelle des vignettes. Il y avait 20 images dans le répertoire source.<br>
+        <table><tr><td>N </td><td>"Real time"</td><td>"Sys time"</td><td>"User time"</td></tr>
+          <tr><td>1</td><td>9.242s</td><td>0.360s</td><td>9.280s</td></tr>
+          <tr><td>2</td><td>6.930s</td><td>0.424s</td><td>12.228s</td></tr>
+          <tr><td>4</td><td>5.317s</td><td>0.452s</td><td>15.676</td></tr></table>
+        On voit donc bien que le script est plus rapide plus le nombre de vignettes générées simultanément est grand.</li>
+      <br><li><u>Légendes :</u> pour chaque vignettes affichées, nous avons ajouté une légende composée de son nom ainsi que de sa date de prise de vue si celle si existe.</li>
+      <br><li><u>Tableau :</u> nous avons choisi d'afficher la galerie d'images sous forme d'un tableau de quatre colonnes. Nous avons hésité à laisser l'utilisateur choisir cette largeur mais cela n'aurait rien apporté de plus, et aurait pu causer problème.</li>
+      <br><li><u>CSS :</u> afin que nos pages soit plus agréables à visionner, nous avons créé une page de styles CSS pour nos différentes pages.</li>
+      <br><li><u>Navigation d'une image à l'autre :</u> comme indiqué dans le sujet, notre script permet à l'utilisateur de cliquer sur une image de la galerie pour la visionner en taille réelle. Une nouvelle page html dédiée à l'image selectionnée s'ouvre dans le navigateur suite au clique de l'utilisateur. Un menu déroulant à été ajouté sur ces pages afin de faciliter la navigation entre chaque page.</li>
+      <br><li><u>Menu déroulant :</u> un menu déroulant a été ajouté aux pages dédiées aux pages des images en taille réelle. Cela permet à l'utilisateur de pouvoir naviguer facilement entre chaque image et de pouvoir revenir à la galerie si voulu. De plus le choix d'aller vers la page actuelle n'est pas disponible.</li>
+    </ul>
+</div>
+
+<div><h3>Nos tests</h3>
+  <p>Afin de s'assurer que notre script fonctionnait bien, même dans des cas tordus nous avons codé des scripts-test. Voici nos différents tests:<br>
+    <ul><li><u>generate_vignette.sh :</u> ce test va vérifier si le programme crée bien une vignette correspondant à chaque image du répertoire "source" dans le répertoire "destination". Pas d'argument, et le résultatdu tests'affiche dans le terminal.</li>
+      <li><u>image_page.sh :</u> ce test vérifie si notre script crée bien une page html en plus pour chaque image du répertoire source. Ces pages correspondent aux pages html avec l'image en taille réelle et non sa vignette. Pas d'argument lors de l'appel du test, et son résultat s'affiche dans le terminal.</li>
+      <li><u>spaces.sh :</u> ce test vérifie si notre programme prend bien en compte les images du répertoire source dont le nom contient un espace. Pas d'argument, le résultat de la vignétarisation s'affiche dans le terminal et le resultat visuel s'affiche à l'écran sur la page web. Le programme n'affiche pas les images avec un nom comportant un espace. Ce qui était prévisible. Après plusieurs réflexion, nous n'avons pas réussi à faire en sorte que notre script prenne en compte ce genre d'image.</li>
+      <li><u>args.sh :</u> ce test va vérifier si chaque argument à un impact sur le focntionnement du script. Il appel donc "galerie-shell.sh" plusieurs fois avec des arguments différents. Le résultat est lui affiché dans le terminal et est un peu long à analyser.</li>
+    </ul>
+Dans le répertoires tests se trouve aussi un script generate_k_image.sh, qui permet de créer k images (appel du script make_img.sh). Il suffit de l'appeler et de rentrer le nombre d'images souhaité en argument.
+  </p>
+</div>
+
+<div><h3>Ce que nous aurions pu améliorer</h3>
+<p>L'objectif principal ayant été rempli, nous avons ensuite rajouté des petits plus à notre projet.<br>
+Cependant il est évidant que nous aurions pu rajouter encore plus de choses afin de rendre notre travail plus complet. <br>
+<ul><li><u>Enrichir notre banque de tests :</u> en effet, nous avons fait plusieurs tests mais pas assez selon nous. Nous étions trop peu inspirés, et avons préféré se concentrer sur le coeur du projet en lui même.</li>
+<li><u>L'utilisation de Git :</u> bien que ceci ne se percoit pas sur le résultat final, nous aurions pu être plus efficaces grace à une bonne manipulation et utilisation de Git. Cet outil, très pratique, est en effet encore  "abstrait" à nos yeux. Notre approximation dans son utilisation nous à fait perdre du temps lors de la mise en commun de nos travaux.</li>
+</ul></p>  
+</div>
+
+<div>
+<h3>Annexes</h3>
+<p>Voici comme demandé la sortie de la commande Shellcheck concernant nos programmes shell:
+<ul><li><u>Galerie-shell.sh :</u><br>. "$DIR_TOOLS"/utilities.sh
+^-- SC1090: Can't follow non-constant source. Use a directive to specify location. <li>
+<li><u>utilities.sh :</u> <br>
+if [ "$longueur" -lt $((7*$para)) ] ; then
+                        ^-- SC2004: $/${} is unnecessary on arithmetic variables.</li>
+</ul>
+
+<footer><div>
+<a href="http://validator.w3.org/check?uri=referer"><img src="../tools/HTML5.png" alt="Valid Html"></a><br>Produit par Stenzel Cackowski et César Dumas. </div></footer></body></html>
+
+
+
+
+
+
+
+
+
