@@ -4,11 +4,9 @@
 ## Usage:
  * ./galerie-shell.sh  --source [folder with your images] 
 
-  * Options:
-+ --dest [folder] : the miniature pictures will be fold there.
-+    
+## Options:
++ --dest [folder] : the miniature pictures will be fold there.  
 + --help    Return the Help message
-+
 + --verb : to activate the verbual mode  
 + --index  [name.html]    to give a special name to your final html gallery
 + --title [title] : to give a name to yout title
